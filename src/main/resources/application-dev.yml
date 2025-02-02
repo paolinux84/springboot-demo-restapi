@@ -5,15 +5,15 @@ spring:
   jackson:
     deserialization:
       fail-on-unknown-properties: true
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/dcbapp
-    password: root
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: 'false'
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    url: jdbc:mysql://localhost:3306/dcbapp
+#    password: root
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    show-sql: 'false'
 
 #properties
 some:
@@ -26,17 +26,19 @@ thirdconfig:
 
 
 # H2 in memory database
-#    spring:
-#      h2:
-#        console:
-#          enabled: 'true'
-#      datasource:
-#        username: sa
-#        url: jdbc:h2:mem:dcbapp
-#        driverClassName: org.h2.Driver
-#        password: password
-#      jpa:
-#        database-platform: org.hibernate.dialect.H2Dialect
+    spring:
+      h2:
+        console:
+          enabled: 'true'
+      datasource:
+        username: sa
+        url: jdbc:h2:mem:dcbapp
+        driverClassName: org.h2.Driver
+        password: password
+      jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        hibernate:
+          ddl-auto: update
 
 #To include/exclude all Actuator endpoints
 #Specify list of endpoints needed to be included/excluded
