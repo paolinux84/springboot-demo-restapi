@@ -1,0 +1,28 @@
+server:
+  port: 8082
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/dcbapp
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: 'false'
+
+#properties
+some:
+  config: yml config prod
+
+otherconfig: yml otherconfig prod
+
+thirdconfig:
+  otherconfig: 3rd yml config prod
